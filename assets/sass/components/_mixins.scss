@@ -1,0 +1,112 @@
+// Rem output with px fallback
+@mixin font-size($size){
+	font-size: $size + px;
+	font-size:( $size/$font_base ) + rem;
+}
+
+// Center block
+@mixin center-block { display: block; margin-left: auto; margin-right: auto; }
+
+// Clearfix
+@mixin clearfix() {
+	&:after{ content:""; display:block; clear:both; }
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin selection($bg, $color){
+	::selection { background: $bg; color:$color; }
+	::-moz-selection { background:$bg; color:$color; }
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin placeholder{
+	::-webkit-input-placeholder { @content; }
+	::-moz-placeholder { @content; }
+	:-ms-input-placeholder { @content; }
+	:-moz-placeholder{ @content; } 
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }   
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin font-smoothing( $type:antialiased ) { 
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: $type;
+  font-smoothing: $type;
+  font-smooth: always;
+}
+
+@mixin absolute-center(){
+  position:absolute;
+  top:50%;
+  left:50%;
+  @include transform( translate( -50%, -50% ) );
+}
+
+@mixin transform( $content ){
+  -webkit-transform: $content;
+  transform: $content;
+}
+
+@mixin transform-origin( $content ){
+  -webkit-transform-origin:$content;
+  transform-origin:$content;
+}
+
+@mixin transition( $content ){
+  -webkit-transition: $content;
+  transition: $content;
+}
+
+@mixin vertical-gradient($first, $second){
+  background: $first; /* Old browsers */
+  background: -moz-linear-gradient(top, $first 0%, $second 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $first 0%,$second 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $first 0%,$second 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$first}', endColorstr='#{$second}',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin horizontal-gradient($first, $second){
+  background: $first; /* Old browsers */
+  background: -moz-linear-gradient(left, $first 0%, $second 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $first 0%,$second 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $first 0%,$second 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$first}', endColorstr='#{$second}',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin radial-gradient( $from, $to ){
+  background: $from;
+  background: -moz-radial-gradient(center, ellipse cover, $from 0%, $to 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, $from 0%,$to 100%);
+  background: radial-gradient(ellipse at center, $from 0%,$to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=1 );
+}

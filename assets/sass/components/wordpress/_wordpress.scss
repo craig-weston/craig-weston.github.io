@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft { display: inline; float: left; margin-right: $spacing*2; }
+.alignright { display: inline; float: right; margin-left: $spacing*2; }
+.aligncenter { clear: both; @include center-block; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after,
+.site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after { @include clearfix; }
+
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after { @include clearfix-after; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+.sticky { display: block; }
+.hentry { margin: 0 0 $spacing*2; }
+.single .byline, .group-blog .byline { display: inline; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget { margin: 0 0 $spacing*2;
+	select { max-width: 100%; }
+	h2{ @include font-size(24); }
+	ul{ list-style:none; margin:0; padding:0; }
+	&.widget_search{
+		form{ @include clearfix;
+			& > label{ width:calc( 100% - 77px ); float:left; 
+				input{ border-radius: $radius 0 0 $radius; }
+			}
+			input[type="submit"]{ float:left; border-left:0; border-radius: 0 $radius $radius 0; }
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley { border: none; margin-bottom: 0; margin-top: 0; padding: 0; }
+embed, iframe, object { max-width: 100%; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption { margin-bottom: $spacing*2; max-width: 100%;
+
+	img[class*="wp-image-"] { @include center-block; }
+
+	.wp-caption-text { margin: 0.8075em 0; }
+}
+
+.wp-caption-text { text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery { margin-bottom: $spacing*2; @extend .row; clear:both; }
+.gallery-item { display: inline-block; text-align: center; vertical-align: top; width: 100%; margin:0; padding:0 $spacing;
+	.gallery-columns-2 & { width: 50%; }
+	.gallery-columns-3 & { width: 33.33%; }
+	.gallery-columns-4 & { width: 25%; }
+	.gallery-columns-5 & { width: 20%; }
+	.gallery-columns-6 & { width: 16.66%; }
+	.gallery-columns-7 & { width: 14.28%; }
+	.gallery-columns-8 & { width: 12.5%; }
+	.gallery-columns-9 & { width: 11.11%; }
+
+	@media screen and ( min-width:$screen-sm ){
+		.gallery-columns-2 &, .gallery-columns-3 &, .gallery-columns-4 &, .gallery-columns-5 &, .gallery-columns-6 &,
+		.gallery-columns-7 &, .gallery-columns-8 &, .gallery-columns-9 &{ width:50%; 
+			&:nth-child( 2n+1 ){ clear:both; }
+		}
+	}
+
+	@media screen and( min-width: $screen-md ){
+		.gallery-columns-2 & { width: 50%; }
+		.gallery-columns-3 & { width: 33.33%; 
+			&:nth-child( 3n+1){ clear:both; }
+		}
+		.gallery-columns-4 & { width: 25%; 
+			&:nth-child( 4n+1){ clear:both; }
+		}
+		.gallery-columns-5 & { width: 20%;
+			&:nth-child( 5n+1){ clear:both; } 
+		}
+		.gallery-columns-6 & { width: 16.66%; 
+			&:nth-child( 6n+1){ clear:both; }
+		}
+		.gallery-columns-7 & { width: 14.28%; 
+			&:nth-child( 7n+1){ clear:both; }
+		}
+		.gallery-columns-8 & { width: 12.5%; 
+			&:nth-child( 8n+1){ clear:both; }
+		}
+		.gallery-columns-9 & { width: 11.11%;
+			&:nth-child( 9n+1){ clear:both; }
+		}
+
+		.gallery-columns-3 &, .gallery-columns-4 &, .gallery-columns-5 &, .gallery-columns-6 &,
+		.gallery-columns-7 &, .gallery-columns-8 &, .gallery-columns-9 &{
+			&:nth-child( 2n+1 ){ clear:none; }
+		}
+	}
+}
+.gallery-caption { display: block; }

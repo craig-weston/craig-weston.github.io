@@ -1,0 +1,31 @@
+html { box-sizing: border-box; overflow-x:hidden; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+body { background: $background_body; }
+
+blockquote, q { quotes: "" ""; 
+	&:before, &:after { content: ""; }
+}
+
+hr { background-color: $background_hr; border: 0; height: 1px; margin-bottom: 1.5em; }
+
+ul, ol { margin: 0 0 1.5em 3em; }
+
+ul { list-style: disc; }
+
+ol { list-style: decimal; }
+
+li > ul, li > ol { margin-bottom: 0; margin-left: 1.5em; }
+
+dt { font-weight: bold; }
+
+dd { margin: 0 1.5em 1.5em; }
+
+img { height: auto; max-width: 100%; }
+
+table { margin: 0 0 $spacing*2; width: 100%; }
+
+@include selection( $primary, $invert );
+
+.required{ color: $fail; }

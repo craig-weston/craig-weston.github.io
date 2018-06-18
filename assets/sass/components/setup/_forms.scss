@@ -1,0 +1,56 @@
+form{
+	label{ width:100%; display:block; font-size:80%; }
+	input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]), .select2-container .select2-choice, select, textarea{ width:100%; }
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .button { 
+	display:inline-block;
+	border: none;
+	border-radius: $radius;
+	background: $primary;
+	text-align:center;
+	color: rgba($invert, .8);	
+	padding: 6px 12px;
+	outline:0;
+	@include font-size( 16 );
+	@include transition( 0.3s );
+	&:hover { background: $secondary; }	
+}
+
+.secondary_button{ @extend .button; background:darken( $grey, 20% );
+	&:hover{ background: darken( $grey, 30% ); }
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
+input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], select, textarea, .select2-container .select2-choice {
+	color: $text_input;
+	border: 1px solid $border_input;
+	border-radius: $radius;
+	padding: 6px 12px;
+
+	&:focus { color: $text_input_focus; }
+}
+
+select { border: 1px solid $border_input; }
+
+textarea { width: 100%; }
+
+fieldset{ border-left:0; border-right:0; border-style:dashed; border-color:$grey; margin:0 0 $spacing*2 0; background: #fbfbfb; }
+
+div.gform_wrapper{ max-width:100%; margin: 0 0 1em 0; 
+	div.gform_heading{ width:100%; }
+	div.ginput_container{
+		input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
+		input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], select{ 
+			color: $text_input; border: 1px solid $border_input; border-radius: $radius; padding: 5px; 
+		}
+	}
+	div.gform_footer{ margin-top:0; text-align:right;
+		input[type="submit"]{ @extend .button; text-transform: uppercase; font-weight:bold; }
+	}
+	li.gfield{
+		textarea{
+			&.small, &.medium, &.large{ width:100%; color: $text_input; border: 1px solid $border_input; border-radius: $radius; padding: 6px 12px; }
+		}
+	}
+}

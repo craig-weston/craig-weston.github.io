@@ -1,0 +1,60 @@
+/*----- Common Variables ---*/
+
+//site fonts
+$font 						: 'Open Sans', sans-serif;
+$font_header 				: 'Open Sans', sans-serif;
+
+//site colour scheme
+$primary					: #3d9cd4;
+$secondary					: #c873b7;
+$text_color 				: #43485b;
+$grey						: #ddd;	// default grey colour for any shading and/or borders
+$invert						: #FFF; // colour that shows over a $primary background
+$portfolio_heading			: #359dd0; // colour for the porfolio headings
+
+//state colours
+$success					: #77a464;	// default green, generally for a state of success
+$fail						: #a94442;	// default red, generally for a state of failure
+$info 						: #bce8f1;	// default blue, for an informative state
+
+//site backgrounds
+$background_body 			: #f2f4f6;
+$background_button 			: $grey;
+
+//navigation colours
+$link 						: $primary;
+$link_hover 				: midnightblue;
+
+// generic display vars
+$spacing 					: 15px;
+$timing 					: 0.3s;
+$radius 					: 3px;
+
+$image_dir : 'dist/img/';
+
+/*----- Other Variables ---*/
+
+$background_screen: #f1f1f1;
+$background_hr: #ccc;
+$background_pre: #eee;
+$background_ins: #fff9c0;
+
+$text_screen: #21759b;
+$text_input: #666;
+$text_input_focus: #111;
+$link_visited: purple;
+
+$border_button: #ccc #ccc #bbb;
+$border_button_hover: #ccc #bbb #aaa;
+$border_button_focus: #aaa #bbb #bbb;
+$border_input: #ccc;
+$border_abbr: #666;
+
+$site_main: 100%;
+$site_sidebar: 25%;
+
+$font_base: 16;
+$font_code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font_pre: "Courier 10 Pitch", Courier, monospace;
+$line_height: 1.5;
+$line_height_pre: 1.6;

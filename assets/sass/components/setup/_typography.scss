@@ -1,0 +1,39 @@
+html{ font-size: $font_base + px; }
+
+body, button, input, select, textarea { color: $text_color; font-family: $font; @include font-size( $font_base ); line-height: $line_height; }
+
+h1, h2, h3, h4, h5, h6 { clear: both; margin-bottom: 0.6em; margin-top:0; display:block; font-family:$font_header; }
+
+h1{ @include font-size( 40 ); }
+h2{ @include font-size( 36 ); }
+h3{ @include font-size( 30 ); }
+h4{ @include font-size( 28 ); }
+h5{ @include font-size( 22 ); }
+h6{ @include font-size( 18 ); }
+
+p { margin-bottom: 1.3em; margin-top:0; }
+
+dfn, cite, em, i { font-style: italic; }
+
+blockquote { margin: 0 1.5em; }
+
+address { margin: 0 0 1.5em; }
+
+pre {
+	background: $background_pre;
+	font-family: $font_pre;
+	@include font-size( 15 );
+	line-height: $line_height_pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var { font-family: $font_code; @include font-size( 15 ); }
+
+abbr, acronym { border-bottom: 1px dotted $border_abbr; cursor: help; }
+
+mark, ins { background: $background_ins; text-decoration: none; }
+
+big { font-size: 125%; }
