@@ -32,7 +32,7 @@ button.navbar-toggle.collapsed{background-color:#0072a4;border:none}
 .navbar-nav{float:none!important;float:initial!important;text-align:center}
 .navbar-nav>li{float:none}
 .navbar-collapse.collapse.in{display:block!important;float:initial!important}
-.intro{display:table;width:100%;height:auto;text-align:center;color:#fff;background:url(https://craig-weston.github.io/img/sliders/Slide.jpg) no-repeat top center scroll;background-size:cover;-o-background-size:cover}
+.intro{display:table;width:100%;height:auto;text-align:center;color:#fff;background:url(https://craig-weston.github.io/img/sliders/Slide.jpg) no-repeat scroll;background-size:cover;-o-background-size:cover}
 .intro .intro-body{display:table-cell;vertical-align:middle;padding:15% 0;background:rgba(0,0,0,.5)}
 .brand-heading{font-size:100px;font-weight:700;text-align:left;color:#0072a4;letter-spacing:-moz-calc(.125rem + .05 * ((100vw - 30rem)/ 50));font-size:calc(.625rem + .25 * ((100vw - 30rem)/ 50))}
 .intro .intro-body .intro-text{font-size:25px;text-align:left}
