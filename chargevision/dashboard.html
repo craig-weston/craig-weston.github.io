@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- begin::Head -->
+<head>
+	<meta charset="utf-8" />
+	<title>Chargevision | Dashboard</title>
+	<meta name="description" content="Latest updates and statistic charts">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+	<!--begin::Web font -->
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["montserrat:300,400,500,600,700","Roboto:300,400,500,600,700","Asap+Condensed:500"]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<style>
+
+		.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+			background: #35a3f7!important;
+			}
+
+		span.counter {
+			font-size: 1.5em;
+			color: #03aeef;
+			}
+		.m-header__bottom {
+			margin-top: 0!important;
+			}
+
+		.m-widget27 .m-widget27__pic:before {
+			background: linear-gradient(to right, #03aeef 20%, #0990 120%)!important;
+			}
+
+		.btn-brand {
+			color: #fff;
+			background-color: #03aeef!important;
+			border-color: #03aeef!important;
+			}
+
+		.nav.nav-pills.nav-pills--brand .nav-link.active {
+			background: #03aeef!important;
+			color: #ffffff;
+			}
+
+		.pulse {
+			box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+			animation: pulse 2s infinite;
+			}
+		.pulse:hover {
+			animation: none;
+			}
+
+		@-webkit-keyframes pulse {
+			0% {
+				-webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+				}
+			70% {
+				-webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+				}
+			100% {
+				-webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+				}
+			}
+		@keyframes pulse {
+			0% {
+				-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+				box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+				}
+			70% {
+				-moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+				box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+				}
+			100% {
+				-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+				box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+				}
+			}
+
+		.widgets .fal {
+			padding-top: 20px;
+			vertical-align: middle;
+			position: relative;
+			top: 30px;
+			font-size: 90px!important;
+			}
+
+	</style>
+
+	<!--end::Web font -->
+
+	<!--begin:: Global Mandatory Vendors -->
+	<link href="assets/vendors/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+
+	<!--end:: Global Mandatory Vendors -->
+
+	<!--begin:: Global Optional Vendors -->
+	<link href="assets/vendors/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+
+	<!--begin:: Bootstrap Vendors -->
+	<link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/animate.css/animate.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/jstree/dist/themes/default/style.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/morris.js/morris.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/chartist/dist/chartist.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/vendors/flaticon/css/flaticon.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/vendors/metronic/css/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/vendors/vendors/fontawesome/css/all.min.css" rel="stylesheet" type="text/css" />
+
+	<!--end:: Global Optional Vendors -->
+
+	<!--begin::Global Theme Styles -->
+	<link href="assets/base/style.bundle.css" rel="stylesheet" type="text/css" />
+
+	<!--RTL version:<link href="assets/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+
+	<!--end::Global Theme Styles -->
+
+	<!--begin::Page Vendors Styles -->
+	<link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+
+	<!--RTL version:<link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+
+	<!--end::Page Vendors Styles -->
+	<link rel="shortcut icon" href="https://bpchargemaster.com/wp-content/themes/BPChargemasterWP/media/images/favicon.ico" />
+</head>
+
+<!-- end::Head -->
+
+<!-- begin::Body -->
+<body class="m-page--fluid m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
+
+<!-- begin::Page loader -->
+<div class="m-page-loader m-page-loader--base">
+	<div class="m-blockui">
+		<span>Please wait...</span>
+		<span>
+					<div class="m-loader m-loader--brand">ChargeVision</div>
+				</span>
+	</div>
+</div>
+
+<!-- end::Page Loader -->
+
+<!-- begin:: Page -->
+<div class="m-grid m-grid--hor m-grid--root m-page">
+
+	<!-- begin::Header -->
+	<header id="m_header" class="m-grid__item m-header " m-minimize="minimize" m-minimize-mobile="minimize" m-minimize-offset="10" m-minimize-mobile-offset="10">
+		<div class="m-header__top">
+			<div class="m-container m-container--fluid m-container--full-height m-page__container">
+				<div class="m-stack m-stack--ver m-stack--desktop">
+
+					<!-- begin::Brand -->
+					<div class="m-stack__item m-brand m-stack__item--left">
+						<div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+							<div class="m-stack__item m-stack__item--middle m-brand__logo">
+								<a href="index.html" class="m-brand__logo-wrapper">
+									<img alt="" src="assets/media/img/logo/logo.svg" style="width: 250px;"/>
+								</a>
+							</div>
+							<div class="m-stack__item m-stack__item--middle m-brand__tools">
+
+								<!-- begin::Quick Actions-->
+								<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push" m-dropdown-toggle="click" aria-expanded="true">
+									<a href="#" class="m--hidden-mobile hidden-xs-down dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn  m-btn--icon m-btn--pill">
+										<i class="fal fa-person-carry"></i> <span> Admin</span>
+									</a>
+									<div class="m-dropdown__wrapper">
+										<span class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"></span>
+										<div class="m-dropdown__inner">
+											<div class="m-dropdown__body">
+												<div class="m-dropdown__content">
+													<ul class="m-nav">
+														<li class="m-nav__section m-nav__section--first m--hide">
+															<span class="m-nav__section-text">Quick Menu</span>
+														</li>
+														<li class="m-nav__item">
+															<a href="" class="m-nav__link">
+
+																<span class="m-nav__link-text">Customer Services</span>
+																<i class="fal fa-phone"></i>
+															</a>
+														</li>
+														<li class="m-nav__item">
+															<a href="" class="m-nav__link">
+
+																<span class="m-nav__link-text">Maintenance</span>
+
+																<i class="fal fa-wrench"></i>
+															</a>
+														</li>
+														<li class="m-nav__item">
+															<a href="" class="m-nav__link">
+
+																<span class="m-nav__link-text">Scheme Manager</span>
+
+																<i class="fal fa-shield-check"></i>
+															</a>
+														</li>
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- end::Quick Actions-->
+
+								<!-- begin::Responsive Header Menu Toggler-->
+								<a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+									<span></span>
+								</a>
+
+								<!-- end::Responsive Header Menu Toggler-->
+
+								<!-- begin::Topbar Toggler-->
+								<a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+									<i class="flaticon-more"></i>
+								</a>
+
+								<!--end::Topbar Toggler-->
+							</div>
+						</div>
+					</div>
+
+					<!-- end::Brand -->
+
+					<!-- begin::Topbar -->
+					<div class="m-stack__item m-stack__item--right m-header-head" id="m_header_nav">
+						<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+							<div class="m-stack__item m-topbar__nav-wrapper">
+								<ul class="m-topbar__nav m-nav m-nav--inline">
+
+									<li class="m-nav__item m-nav__item--danger m-dropdown m-dropdown--skin-light m-dropdown--large m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
+										<a href="#" class="m-nav__link m-dropdown__toggle">
+											<span class="m-nav__link-badge m-badge m-badge--dot m-badge--info m--hide"></span>
+											<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper"><i class="flaticon-share"></i></span></span>
+										</a>
+										<div class="m-dropdown__wrapper">
+											<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+											<div class="m-dropdown__inner">
+												<div class="m-dropdown__header m--align-center">
+													<span class="m-dropdown__header-title">Quick Actions</span>
+													<span class="m-dropdown__header-subtitle">Home Charging</span>
+												</div>
+												<div class="m-dropdown__body m-dropdown__body--paddingless">
+													<div class="m-dropdown__content">
+														<div class="m-scrollable" data-scrollable="false" data-height="380" data-mobile-height="200">
+															<div class="m-nav-grid m-nav-grid--skin-light">
+																<div class="m-nav-grid__row">
+																	<a href="#" class="m-nav-grid__item">
+																		<i class="m-nav-grid__icon flaticon-file"></i>
+																		<span class="m-nav-grid__text">Generate Reports</span>
+																	</a>
+																	<a href="#" class="m-nav-grid__item">
+																		<i class="m-nav-grid__icon flaticon-time"></i>
+																		<span class="m-nav-grid__text">View Charges</span>
+																	</a>
+																</div>
+																<div class="m-nav-grid__row">
+																	<a href="#" class="m-nav-grid__item">
+																		<i class="m-nav-grid__icon flaticon-folder"></i>
+																		<span class="m-nav-grid__text">Create New Schedule</span>
+																	</a>
+																	<a href="#" class="m-nav-grid__item">
+																		<i class="m-nav-grid__icon flaticon-clipboard"></i>
+																		<span class="m-nav-grid__text">Completed Schedules</span>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="m-nav__item m-nav__item--primary m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
+
+
+										<a href="#" class="m-nav__link m-dropdown__toggle">
+											<span class="m-topbar__username m--hidden-mobile text-dark pr-2">David Martell</span>
+											<span class="m-topbar__userpic">
+														<img src="https://bpchargemaster.com/wp-content/uploads/2017/11/David-Martell.jpg" class="m--img-rounded m--marginless m--img-centered" alt="">
+													</span>
+											<span class="m-nav__link-icon m-topbar__usericon  m--hide">
+														<span class="m-nav__link-icon-wrapper"><i class="flaticon-user-ok"></i></span>
+													</span>
+										</a>
+
+
+
+
+										<div class="m-dropdown__wrapper">
+											<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+											<div class="m-dropdown__inner">
+												<div class="m-dropdown__header m--align-center">
+													<div class="m-card-user m-card-user--skin-light">
+														<div class="m-card-user__pic">
+															<img src="https://bpchargemaster.com/wp-content/uploads/2017/11/David-Martell.jpg" class="m--img-rounded m--marginless" alt="" />
+														</div>
+														<div class="m-card-user__details">
+													 f		<span class="m-card-user__name m--font-weight-500">David Martell</span>
+															<a href="" class="m-card-user__email m--font-weight-300 m-link">david@gmail.com</a>
+														</div>
+													</div>
+												</div>
+												<div class="m-dropdown__body">
+													<div class="m-dropdown__content">
+														<ul class="m-nav m-nav--skin-light">
+															<li class="m-nav__section m--hide">
+																<span class="m-nav__section-text">Section</span>
+															</li>
+															<li class="m-nav__item">
+																<a href="profile.html" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-profile-1"></i>
+																	<span class="m-nav__link-title">
+																				<span class="m-nav__link-wrap">
+																					<span class="m-nav__link-text">My Profile</span>
+																					<span class="m-nav__link-badge"><span class="m-badge m-badge--success">2</span></span>
+																				</span>
+																			</span>
+																</a>
+															</li>
+															<li class="m-nav__item">
+																<a href="profile.html" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-share"></i>
+																	<span class="m-nav__link-text">Activity</span>
+																</a>
+															</li>
+
+															<li class="m-nav__separator m-nav__separator--fit">
+															</li>
+															<li class="m-nav__item">
+																<a href="profile.html" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-info"></i>
+																	<span class="m-nav__link-text">FAQ</span>
+																</a>
+															</li>
+															<li class="m-nav__item">
+																<a href="profile.html" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+																	<span class="m-nav__link-text">Support</span>
+																</a>
+															</li>
+															<li class="m-nav__separator m-nav__separator--fit">
+															</li>
+															<li class="m-nav__item">
+																<a href="snippets/pages/user/login-1.html" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li id="m_quick_sidebar_toggle" class="m-nav__item m-nav__item--info m-nav__item--qs">
+										<a href="#" class="m-nav__link m-dropdown__toggle">
+											<span class="m-nav__link-icon m-nav__link-icon-alt"><span class="m-nav__link-icon-wrapper"><i class="flaticon-grid-menu"></i></span></span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- end::Topbar -->
+				</div>
+			</div>
+		</div>
+		<div class="m-header__bottom">
+			<div class="m-container m-container--fluid m-container--full-height m-page__container">
+				<div class="m-stack m-stack--ver m-stack--desktop">
+
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- end::Header -->
+
+
+
+	<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-page__container m-body pb-5">
+		<div class="row">
+			<div class="col-12">
+				<a href="#" class="btn btn-accent m-btn m-btn--icon m-btn--pill">
+										<span>
+											<i class="fal fa-charging-station"></i>
+											<span>Homecharge Unit 1 	&nbsp;<i class="fa fa-chevron-circle-down"></i></span>
+										</span>
+				</a> &nbsp;( Last Updated: 21/02/2019 )
+
+
+				<a href="#" class="btn btn-default m-btn m-btn--icon m-btn--pill float-right text-success">
+											<span>
+												<i class="fa fa-dot text-success pulse"></i>
+												<i class="fas fa-dot-circle text-success pulse"></i>
+												 <span>Currently Active</span> 
+											</span>
+				</a>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- begin::Body -->
+	<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop m-page__container">
+		<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+			<!-- BEGIN: Subheader -->
+			<div class="m-subheader mb-3">
+				<div class="d-flex align-items-center">
+					<div class="mr-auto">
+						<h3 class="m-subheader__title m-subheader__title--separator">Dashboard</h3>
+						<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+							<li class="m-nav__item m-nav__item--home">
+								<a href="#" class="m-nav__link m-nav__link--icon">
+									<i class="m-nav__link-icon la la-home"></i>
+								</a>
+							</li>
+							<li class="m-nav__separator">-</li>
+							<li class="m-nav__item">
+								<a href="" class="m-nav__link">
+									<span class="m-nav__link-text">Dashboard</span>
+								</a>
+							</li>
+							<li class="m-nav__separator">-</li>
+							<li class="m-nav__item">
+								<a href="" class="m-nav__link">
+									<span class="m-nav__link-text">Reports</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+								<span class="m-subheader__daterange" id="m_dashboard_daterangepicker">
+									<span class="m-subheader__daterange-label">
+										<span class="m-subheader__daterange-title"></span>
+										<span class="m-subheader__daterange-date m--font-brand"></span>
+									</span>
+									<a href="#" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+										<i class="la la-angle-down"></i>
+									</a>
+								</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- END: Subheader -->
+			<div class="m-content">
+
+				<!--Begin::Section-->
+				<div class="row">
+
+					<div class="col-xl-7">
+
+						<!--begin:: Widgets/Finance Summary-->
+						<div class="m-portlet m-portlet--full-height m-portlet--fit  m-portlet--rounded">
+							<div class="m-portlet__head">
+								<div class="m-portlet__head-caption">
+									<div class="m-portlet__head-title">
+										<h3 class="m-portlet__head-text">
+											Electricity Usage (kWh)
+										</h3>
+									</div>
+								</div>
+								<div class="m-portlet__head-tools">
+									<ul class="nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm" role="tablist">
+
+										<li class="nav-item m-tabs__item">
+											<a class="nav-link m-tabs__link active " data-toggle="tab" href="#m_widget4_tab1_content" role="tab">
+												Last Week
+											</a>
+										</li>
+										<li class="nav-item m-tabs__item">
+											<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_widget4_tab2_content" role="tab">
+												Custom
+											</a>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="m-portlet__body">
+								<div class="tab-content">
+									<div class="tab-pane active">
+										<ul class="nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm" role="tablist">
+											<li class="m-menu__item  m-menu__item--actions float-left" aria-haspopup="true">
+												<div class="m-menu__link m-menu__link--toggle-skip">
+													<div class="dropdown">
+														<a href="#" class="btn btn-info m-btn m-btn--icon m-btn--pill m-btn--air   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="fal fa-cloud-download"></i>&nbsp;&nbsp;Export
+														</a>
+														<div class="dropdown-menu dropdown-menu-right">
+															<a class="dropdown-item" href="#"><i class="fa fa-file-excel"></i> Excel</a>
+															<a class="dropdown-item" href="#"><i class="fa fa-file-pdf"></i> PDF</a>
+
+														</div>
+													</div>
+												</div>
+											</li>
+
+										</ul>
+										<div class="m-widget12 m-widget12--chart-bottom m--margin-top-10" style="min-height: 450px">
+											<div class="m-widget12__item">
+											<span class="m-widget12__text1">Total<br><span>500kW</span></span>
+											<span class="m-widget12__text2">Maximum Charge<br><span>7kWh</span></span>
+											</div>
+											<div class="m-widget12__item">
+												<span class="m-widget12__text1">Your Average Use<br><span>560kW</span></span>
+												<div class="m-widget12__text2">
+													<div class="m-widget12__desc">Efficiency Rate</div>
+													<br>
+													<div class="m-widget12__progress">
+														<div class="m-widget12__progress-sm progress m-progress--sm">
+															<div class="m-widget12__progress-bar progress-bar bg-brand" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+														<span class="m-widget12__stats">
+																			63%
+																		</span>
+													</div>
+												</div>
+											</div>
+											<div class="m-widget12__chart m-portlet-fit--sides" style="height:290px;">
+												<canvas id="energy-chart"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--end:: Widgets/Finance Summary-->
+					</div>
+
+					<div class="col-xl-5">
+
+						<!--begin:: Widgets/Quick Stats-->
+						<div class="row m-row--full-height widgets text-center">
+							<div class="col-sm-12 col-md-12 col-lg-6">
+								<div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand  m-portlet--rounded">
+									<div class="m-portlet__body">
+										<div class="m-widget26">
+											<div class="m-widget26__number">
+												<span class="counter text-info">7</span>
+												<small>Total Recharges</small>
+											</div>
+											<i class="fal fa-charging-station fa-5x text-info"></i>
+										</div>
+									</div>
+								</div>
+								<div class="m--space-30"></div>
+								<div class="m-portlet m-portlet--half-height m-portlet--border-bottom-light m-portlet--rounded">
+									<div class="m-portlet__body">
+										<div class="m-widget26">
+											<div class="m-widget26__number">
+												<span class="counter text-success">690</span>
+												<small>CO2 Saved (kg)</small>
+											</div>
+											<i class="fal fa-cloud fa-5x text-success"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-6">
+								<div class="m-portlet m-portlet--half-height m-portlet--border-bottom-success  m-portlet--rounded">
+									<div class="m-portlet__body">
+										<div class="m-widget26">
+											<div class="m-widget26__number">
+												<span class="text-success huge">£</span><span class="counter text-success">7.60</span>
+												<small>Electricity Cost </small>
+											</div>
+											<i class="fal fa-bolt fa-5x text-success"></i>
+										</div>
+									</div>
+								</div>
+								<div class="m--space-30"></div>
+								<div class="m-portlet m-portlet--half-height m-portlet--border-bottom-warning  m-portlet--rounded">
+									<div class="m-portlet__body">
+										<div class="m-widget26">
+											<div class="m-widget26__number">
+												<span class="counter text-warning">53</span>
+												<small>Total Energy (kWh)</small>
+											</div>
+											<i class="fal fa-lightbulb fa-5x text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--end:: Widgets/Quick Stats-->
+					</div>
+
+					<div class="col-xl-4">
+					</div>
+				</div>
+
+				<!--End::Section-->
+
+
+				<!--Begin::Section-->
+				<div class="row">
+					<div class="col-xl-6">
+						<!--begin:: Widgets/Blog-->
+						<div class="m-portlet m-portlet--head-overlay m-portlet--full-height  m-portlet--rounded m-portlet--rounded-force">
+							<div class="m-portlet__head m-portlet__head--fit-">
+								<div class="m-portlet__head-caption">
+									<div class="m-portlet__head-title">
+										<h3 class="m-portlet__head-text m--font-light fa-3x">
+											Smart Charging
+										</h3>
+									</div>
+								</div>
+								<div class="m-portlet__head-tools">
+									<ul class="m-portlet__nav">
+										<li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover">
+											<a href="#" class="m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill m-btn btn-outline-light m-btn--hover-light">
+												Homecharge Unit 1 <small class="hidden-lg m--hide">( Dropdown for multiple units)</small>
+											</a>
+											<div class="m-dropdown__wrapper">
+												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+												<div class="m-dropdown__inner">
+													<div class="m-dropdown__body">
+														<div class="m-dropdown__content">
+															<ul class="m-nav">
+																<li>Homecharge Unit 2</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="m-portlet__body">
+								<div class="m-widget27 m-portlet-fit--sides">
+									<div class="m-widget27__pic">
+										<img alt="homecharge wallbox charger" src="https://bpchargemaster.com/wp-content/uploads/2017/10/portal-forhome.jpg" style="height: auto;">
+										<div class="m-widget27__btn">
+											<button type="button" class="btn m-btn--pill btn-info m-btn m-btn--custom m-btn--bolder text-white">Homecharge Scheduling</button>
+										</div>
+									</div>
+									<div class="m-widget27__container">
+
+										<!-- begin::Nav pills -->
+										<ul class="m-widget27__nav-items nav nav-pills nav-fill" role="tablist">
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link active" data-toggle="pill" href="#Monday">Monday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Tuesday">Tuesday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Wednesday">Wednesday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Thursday">Thursday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Friday">Friday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Saturday">Saturday</a>
+											</li>
+											<li class="m-widget27__nav-item nav-item">
+												<a class="nav-link" data-toggle="pill" href="#Sunday">Sunday</a>
+											</li>
+										</ul>
+
+										<!-- end::Nav pills -->
+
+										<!-- begin::Tab Content -->
+										<div class="m-widget27__tab tab-content m-widget27--no-padding">
+											<div id="Monday" class="tab-pane active">
+												<div class="form-group m-form__group row has-success">
+
+													<div class="col-6">
+														<label>Select a start time:</label>
+														<div class="input-group timepicker">
+
+															<input class="form-control m-input" id="time-picker" readonly="" placeholder="Select time" type="text">
+															<div class="input-group-append">
+																<span class="input-group-text"><i class="la la-clock-o"></i></span>
+															</div>
+														</div>
+
+													</div>
+
+
+													<div class="col-6">
+														<label>Select an end time:</label>
+														<div class="input-group timepicker">
+
+															<input class="form-control m-input" id="time-picker" readonly="" placeholder="Select time" type="text">
+															<div class="input-group-append">
+																<span class="input-group-text"><i class="la la-clock-o"></i></span>
+															</div>
+														</div>
+														<span class="m-form__help">We aim to fully charge your car by this time</span>
+													</div>
+
+
+												</div>
+
+
+
+
+
+											</div>
+
+										</div>
+										<!-- end::Tab Content -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--end:: Widgets/Blog-->
+					</div>
+
+					<div class="col-xl-6 col-lg-12">
+
+						<!--Begin::Portlet-->
+						<div class="m-portlet  m-portlet--full-height  m-portlet--rounded">
+							<div class="m-portlet__head">
+								<div class="m-portlet__head-caption">
+									<div class="m-portlet__head-title">
+										<h3 class="m-portlet__head-text">
+											Your History
+										</h3>
+									</div>
+								</div>
+								<div class="m-portlet__head-tools">
+									<ul class="m-portlet__nav">
+										<li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
+											<a href="#" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl m-dropdown__toggle">
+												<i class="la la-ellipsis-h m--font-brand"></i>
+											</a>
+											<div class="m-dropdown__wrapper">
+												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+												<div class="m-dropdown__inner">
+													<div class="m-dropdown__body">
+														<div class="m-dropdown__content">
+															<ul class="m-nav">
+																<li class="m-nav__section m-nav__section--first">
+																	<span class="m-nav__section-text">Quick Actions</span>
+																</li>
+																<li class="m-nav__item">
+																	<a href="" class="m-nav__link">
+																		<i class="m-nav__link-icon flaticon-share"></i>
+																		<span class="m-nav__link-text">Activity</span>
+																	</a>
+																</li>
+																<li class="m-nav__item">
+																	<a href="" class="m-nav__link">
+																		<i class="m-nav__link-icon flaticon-chat-1"></i>
+																		<span class="m-nav__link-text">Messages</span>
+																	</a>
+																</li>
+																<li class="m-nav__item">
+																	<a href="" class="m-nav__link">
+																		<i class="m-nav__link-icon flaticon-info"></i>
+																		<span class="m-nav__link-text">FAQ</span>
+																	</a>
+																</li>
+																<li class="m-nav__item">
+																	<a href="" class="m-nav__link">
+																		<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+																		<span class="m-nav__link-text">Support</span>
+																	</a>
+																</li>
+																<li class="m-nav__separator m-nav__separator--fit">
+																</li>
+																<li class="m-nav__item">
+																	<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">Cancel</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="m-portlet__body">
+								<div class="m-scrollable" data-scrollable="true" data-height="380" data-mobile-height="300">
+
+									<!--Begin::Timeline 2 -->
+									<div class="m-timeline-2">
+										<div class="m-timeline-2__items  m--padding-top-25 m--padding-bottom-30">
+											<div class="m-timeline-2__item m--margin-top-30">
+												<span class="m-timeline-2__item-time">12:45</span>
+												<div class="m-timeline-2__item-cricle">
+													<i class="fa fa-genderless m--font-success"></i>
+												</div>
+												<div class="m-timeline-2__item-text m-timeline-2__item-text--bold">
+													Connection to home charger found. Installing updates...
+												</div>
+											</div>
+											<div class="m-timeline-2__item m--margin-top-30">
+												<span class="m-timeline-2__item-time">14:00</span>
+												<div class="m-timeline-2__item-cricle">
+													<i class="fa fa-genderless m--font-brand"></i>
+												</div>
+												<div class="m-timeline-2__item-text m--padding-top-5">
+													Request to start charging
+												</div>
+											</div>
+											<div class="m-timeline-2__item m--margin-top-30">
+												<span class="m-timeline-2__item-time">16:00</span>
+												<div class="m-timeline-2__item-cricle">
+													<i class="fa fa-genderless m--font-warning"></i>
+												</div>
+												<div class="m-timeline-2__item-text m--padding-top-5">
+													Lorem ipsum dolor sit amit,consectetur eiusmdd tempor<br>
+													incididunt ut labore et dolore magna elit enim at minim<br>
+													veniam quis nostrud
+												</div>
+											</div>
+											<div class="m-timeline-2__item m--margin-top-30">
+												<span class="m-timeline-2__item-time">17:00</span>
+												<div class="m-timeline-2__item-cricle">
+													<i class="fa fa-genderless m--font-info"></i>
+												</div>
+												<div class="m-timeline-2__item-text m--padding-top-5">
+													Lorem ipsum dolor sit amit,consectetur eiusmdd tempor<br>
+													incididunt ut labore et dolore magna elit enim at minim<br>
+													veniam quis nostrud
+												</div>
+											</div>
+											<div class="m-timeline-2__item m--margin-top-30">
+												<span class="m-timeline-2__item-time">16:00</span>
+												<div class="m-timeline-2__item-cricle">
+													<i class="fa fa-genderless m--font-brand"></i>
+												</div>
+												<div class="m-timeline-2__item-text m--padding-top-5">
+													Lorem ipsum dolor sit amit,consectetur eiusmdd tempor<br>
+													incididunt ut labore et dolore magna elit enim at minim<br>
+													veniam quis nostrud
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+
+
+									<!--End::Timeline 2 -->
+
+
+								</div>
+
+
+								<div class="row  align-items-center pie-chart">
+									<div class="col">
+										<div id="m_chart_personal_income_quater_1" class="m-widget27__chart pt-3 mt-4 style="height: 160px">
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+
+
+					<!--End::Portlet-->
+				</div>
+
+
+			</div>
+
+			<!--End::Section-->
+
+
+			<!--Begin::Section-->
+			<div class="row">
+				<div class="col-xl-12">
+
+					<!--begin:: Widgets/Application Sales-->
+					<div class="m-portlet m-portlet--full-height  m-portlet--rounded">
+						<div class="m-portlet__head">
+							<div class="m-portlet__head-caption">
+								<div class="m-portlet__head-title">
+									<h3 class="m-portlet__head-text">
+										Your Recent Charges
+									</h3>
+								</div>
+							</div>
+							<div class="m-portlet__head-tools">
+								<ul class="nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm" role="tablist">
+									<li class="nav-item m-tabs__item">
+										<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_widget11_tab1_content" role="tab">
+											Last Month
+										</a>
+									</li>
+									<li class="nav-item m-tabs__item">
+										<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_widget11_tab2_content" role="tab">
+											All Time
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="m-portlet__body">
+							<div class="tab-content">
+								<div class="tab-pane active" id="m_widget11_tab1_content">
+
+									<!--begin::Widget 11-->
+									<div class="m-widget11">
+										<div class="table-responsive">
+
+											<!--begin::Table-->
+											<table class="table">
+
+												<!--begin::Thead-->
+												<thead>
+												<tr>
+													<td class="m-widget11__label">#</td>
+													<td class="m-widget11__app">Location</td>
+													<td class="m-widget11__sales">Date</td>
+													<td class="m-widget11__change">Energy Supplied</td>
+													<td class="m-widget11__price">Time Started</td>
+													<td class="m-widget11__total m--align-right">Energy Usage (kWh)</td>
+												</tr>
+												</thead>
+
+												<!--end::Thead-->
+
+												<!--begin::Tbody-->
+												<tbody>
+												<tr>
+													<td>
+														<img src="https://polar-network.com/wp-content/uploads/2019/01/cropped-roundel.png" class="img-fluid mr-2 p-1 ml-0 pr-5">
+													</td>
+													<td>
+														<span class="m-widget11__title">500 Capability Green, Luton, Bedfordshire, LU1 3LS</span>
+														<span class="m-widget11__sub">Polar Network</span>
+													</td>
+													<td>28/02/2019</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_1_1" style="display: block; width: 100px; height: 50px;" width="100" height="50"></canvas>
+														</div>
+													</td>
+													<td>3.22</td>
+													<td class="m--align-right m--font-brand"><i class="fa fa-bolt"> </i> 5.6</td>
+												</tr>
+												<tr>
+													<td>
+														<i class="fal fa-charging-station fa-3x"></i>
+													</td>
+													<td>
+														<span class="m-widget11__title">39 Grouse Way, Cannock, WS11 7LF</span>
+														<span class="m-widget11__sub">Home Charging</span>
+													</td>
+													<td>25/02/2019</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_1_2" style="display: block; width: 100px; height: 50px;" width="100" height="50"></canvas>
+														</div>
+													</td>
+													<td>6.34</td>
+													<td class="m--align-right m--font-brand"> <i class="fa fa-bolt"> </i> 22.3</td>
+												</tr>
+												<tr>
+													<td>
+														<img src="https://polar-network.com/wp-content/uploads/2019/01/cropped-roundel.png" class="img-fluid mr-2 p-1 ml-0 pr-5">
+													</td>
+													<td>
+														<span class="m-widget11__title">500 Capability Green, Luton, Bedfordshire, LU1 3LS</span>
+														<span class="m-widget11__sub">Polar Network</span>
+													</td>
+													<td>24/02/2019</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_1_3" style="display: block; width: 100px; height: 50px;" width="100" height="50"></canvas>
+														</div>
+													</td>
+													<td>5.55</td>
+													<td class="m--align-right m--font-brand"> <i class="fa fa-bolt"> </i> 33.4</td>
+												</tr>
+												<tr>
+													<td>
+														<i class="fal fa-charging-station fa-3x"></i>
+													</td>
+													<td>
+														<span class="m-widget11__title">39 Grouse Way, Cannock, WS11 7LF</span>
+														<span class="m-widget11__sub">Home Charging</span>
+													</td>
+													<td>22/02/2019</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_1_4" style="display: block; width: 100px; height: 50px;" width="100" height="50"></canvas>
+														</div>
+													</td>
+													<td>$16</td>
+													<td class="m--align-right m--font-brand"><i class="fa fa-bolt"> </i> 9.2</td>
+												</tr>
+												</tbody>
+
+												<!--end::Tbody-->
+											</table>
+
+											<!--end::Table-->
+										</div>
+
+										<div class="m-widget11__action m--align-right">
+											<button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand">Generate Report</button>
+
+											<button type="button" class="btn m-btn--pill btn-info m-btn m-btn--custom m-btn--hover-brand">View More Details</button>
+										</div>
+									</div>
+
+									<!--end::Widget 11-->
+								</div>
+								<div class="tab-pane" id="m_widget11_tab2_content">
+
+									<!--begin::Widget 11-->
+									<div class="m-widget11">
+										<div class="table-responsive">
+
+											<!--begin::Table-->
+											<table class="table">
+
+												<!--begin::Thead-->
+												<thead>
+												<tr>
+													<td class="m-widget11__label">#</td>
+													<td class="m-widget11__app">Location</td>
+													<td class="m-widget11__sales">Energy Supplied</td>
+													<td class="m-widget11__change">Change</td>
+													<td class="m-widget11__price">Time Started</td>
+													<td class="m-widget11__total m--align-right">Energy Usage (kWh)</td>
+												</tr>
+												</thead>
+
+												<!--end::Thead-->
+
+												<!--begin::Tbody-->
+												<tbody>
+												<tr>
+													<td>
+														<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+															<input type="checkbox"><span></span>
+														</label>
+													</td>
+													<td>
+														<span class="m-widget11__title">Loop</span>
+														<span class="m-widget11__sub">CRM System</span>
+													</td>
+													<td>19,200</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_2_1" style="display: block; width: 0px; height: 0px;" height="0" width="0"></canvas>
+														</div>
+													</td>
+													<td>6.7/td>
+													<td class="m--align-right m--font-brand">8.3</td>
+												</tr>
+												<tr>
+													<td>
+														<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"><input type="checkbox"><span></span></label>
+													</td>
+													<td>
+														<span class="m-widget11__title">Selto</span>
+														<span class="m-widget11__sub">Powerful Website Builder</span>
+													</td>
+													<td>24,310</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_2_2" style="display: block; width: 0px; height: 0px;" height="0" width="0"></canvas>
+														</div>
+													</td>
+													<td>62.7</td>
+													<td class="m--align-right m--font-brand">23.3</td>
+												</tr>
+												<tr>
+													<td>
+														<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"><input type="checkbox"><span></span></label>
+													</td>
+													<td>
+														<span class="m-widget11__title">Jippo</span>
+														<span class="m-widget11__sub">The Best Selling App</span>
+													</td>
+													<td>2.7</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_2_3" style="display: block; width: 0px; height: 0px;" height="0" width="0"></canvas>
+														</div>
+													</td>
+													<td>1.2</td>
+													<td class="m--align-right m--font-brand">55.3</td>
+												</tr>
+												<tr>
+													<td>
+														<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"><input type="checkbox"><span></span></label>
+													</td>
+													<td>
+														<span class="m-widget11__title">Verto</span>
+														<span class="m-widget11__sub">Web Development Tool</span>
+													</td>
+													<td>11,094</td>
+													<td>
+														<div class="m-widget11__chart" style="height:50px; width: 100px">
+															<iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+															<canvas id="m_chart_sales_by_apps_2_4" style="display: block; width: 0px; height: 0px;" height="0" width="0"></canvas>
+														</div>
+													</td>
+													<td>3.4</td>
+													<td class="m--align-right m--font-brand">5.6</td>
+												</tr>
+												</tbody>
+
+												<!--end::Tbody-->
+											</table>
+
+											<!--end::Table-->
+										</div>
+										<div class="m-widget11__action m--align-right">
+											<button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand">Generate Report</button>
+										</div>
+									</div>
+
+									<!--end::Widget 11-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--end:: Widgets/Application Sales-->
+				</div>
+
+			</div>
+
+			<!--End::Section-->
+
+
+		</div>
+
+		<!-- end::Body -->
+
+		<!-- begin::Footer -->
+		<footer class="m-grid__item m-footer ">
+			<div class="m-container m-container--fluid m-container--full-height m-page__container">
+				<div class="m-footer__wrapper">
+					<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+						<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+								<span class="m-footer__copyright">
+									2019 &copy; Chargevision 
+								</span>
+						</div>
+						<div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+							<ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link">
+										<span class="m-nav__link-text">About</span>
+									</a>
+								</li>
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link">
+										<span class="m-nav__link-text">Privacy</span>
+									</a>
+								</li>
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link">
+										<span class="m-nav__link-text">T&C</span>
+									</a>
+								</li>
+								<li class="m-nav__item">
+									<a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
+										<i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- end::Footer -->
+	</div>
+
+	<!-- end:: Page -->
+
+	<!-- begin::Quick Sidebar -->
+	<div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
+		<div class="m-quick-sidebar__content m--hide">
+			<span id="m_quick_sidebar_close" class="m-quick-sidebar__close"><i class="la la-close"></i></span>
+			<ul id="m_quick_sidebar_tabs" class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
+
+				<li class="nav-item m-tabs__item">
+					<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_quick_sidebar_tabs_settings" role="tab">Settings</a>
+				</li>
+				<li class="nav-item m-tabs__item">
+					<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_quick_sidebar_tabs_logs" role="tab">Charging Timeline</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+
+				<div class="tab-pane active" id="m_quick_sidebar_tabs_settings" role="tabpanel">
+					<div class="m-list-settings m-scrollable">
+						<div class="m-list-settings__group">
+							<div class="m-list-settings__heading">General Settings</div>
+							<div class="m-list-settings__item">
+								<span class="m-list-settings__item-label">Email Notifications</span>
+								<span class="m-list-settings__item-control">
+										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+											<label>
+												<input type="checkbox" checked="checked" name="">
+												<span></span>
+											</label>
+										</span>
+									</span>
+							</div>
+							<div class="m-list-settings__item">
+								<span class="m-list-settings__item-label">Site Tracking</span>
+								<span class="m-list-settings__item-control">
+										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+											<label>
+												<input type="checkbox" name="">
+												<span></span>
+											</label>
+										</span>
+									</span>
+							</div>
+							<div class="m-list-settings__item">
+								<span class="m-list-settings__item-label">SMS Alerts</span>
+								<span class="m-list-settings__item-control">
+										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+											<label>
+												<input type="checkbox" name="">
+												<span></span>
+											</label>
+										</span>
+									</span>
+							</div>
+
+						</div>
+						<div class="m-list-settings__group">
+							<div class="m-list-settings__heading">System Settings</div>
+							<div class="m-list-settings__item">
+								<span class="m-list-settings__item-label">Email Alerts</span>
+								<span class="m-list-settings__item-control">
+										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+											<label>
+												<input type="checkbox" name="">
+												<span></span>
+											</label>
+										</span>
+									</span>
+							</div>
+							<div class="m-list-settings__item">
+								<span class="m-list-settings__item-label">Error Reports</span>
+								<span class="m-list-settings__item-control">
+										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+											<label>
+												<input type="checkbox" name="">
+												<span></span>
+											</label>
+										</span>
+									</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="m_quick_sidebar_tabs_logs" role="tabpanel">
+					<div class="m-list-timeline m-scrollable">
+						<div class="m-list-timeline__group">
+							<div class="m-list-timeline__heading">
+								Chargevision Logs
+							</div>
+							<div class="m-list-timeline__items">
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+									<a href="" class="m-list-timeline__text">Scheduled charging<span class="m-badge m-badge--warning m-badge--wide">important</span></a>
+									<span class="m-list-timeline__time">Just now</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+									<a href="" class="m-list-timeline__text">System Update 2.0</a>
+									<span class="m-list-timeline__time">11 mins</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
+									<a href="" class="m-list-timeline__text">New invoice received</a>
+									<span class="m-list-timeline__time">20 mins</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
+									<a href="" class="m-list-timeline__text">User updated info<span class="m-badge m-badge--success m-badge--wide">resolved</span></a>
+									<span class="m-list-timeline__time">1 hr</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+									<a href="" class="m-list-timeline__text">Exported to PDF</a>
+									<span class="m-list-timeline__time">2 hrs</span>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- end::Quick Sidebar -->
+
+	<!-- begin::Scroll Top -->
+	<div id="m_scroll_top" class="m-scroll-top">
+		<i class="la la-arrow-up"></i>
+	</div>
+
+	<!-- end::Scroll Top -->
+
+
+
+	<!--begin:: Global Mandatory Vendors -->
+	<script src="assets/vendors/jquery/dist/jquery.js" type="text/javascript"></script>
+	<script src="assets/vendors/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+	<script src="assets/vendors/moment/min/moment.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+	<script src="assets/vendors/wnumb/wNumb.js" type="text/javascript"></script>
+
+	<!--end:: Global Mandatory Vendors -->
+
+	<!--begin:: Global Optional Vendors -->
+	<script src="assets/vendors/jquery.repeater/src/lib.js" type="text/javascript"></script>
+	<script src="assets/vendors/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
+	<script src="assets/vendors/jquery.repeater/src/repeater.js" type="text/javascript"></script>
+	<script src="assets/vendors/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/bootstrap-datepicker.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/bootstrap-timepicker.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/bootstrap-daterangepicker.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-switch/dist/js/bootstrap-switch.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/bootstrap-switch.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+	<script src="assets/vendors/select2/dist/js/select2.full.js" type="text/javascript"></script>
+	<script src="assets/vendors/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
+	<script src="assets/vendors/handlebars/dist/handlebars.js" type="text/javascript"></script>
+	<script src="assets/vendors/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
+	<script src="assets/vendors/inputmask/dist/inputmask/inputmask.date.extensions.js" type="text/javascript"></script>
+	<script src="assets/vendors/inputmask/dist/inputmask/inputmask.numeric.extensions.js" type="text/javascript"></script>
+	<script src="assets/vendors/inputmask/dist/inputmask/inputmask.phone.extensions.js" type="text/javascript"></script>
+	<script src="assets/vendors/nouislider/distribute/nouislider.js" type="text/javascript"></script>
+	<script src="assets/vendors/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
+	<script src="assets/vendors/autosize/dist/autosize.js" type="text/javascript"></script>
+	<script src="assets/vendors/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
+	<script src="assets/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
+	<script src="assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
+	<script src="assets/vendors/markdown/lib/markdown.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/bootstrap-markdown.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+	<script src="assets/vendors/jquery-validation/dist/additional-methods.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/forms/jquery-validation.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/bootstrap-notify/bootstrap-notify.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/base/bootstrap-notify.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/toastr/build/toastr.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/jstree/dist/jstree.js" type="text/javascript"></script>
+	<script src="assets/vendors/raphael/raphael.js" type="text/javascript"></script>
+	<script src="assets/vendors/morris.js/morris.js" type="text/javascript"></script>
+	<script src="assets/vendors/chartist/dist/chartist.js" type="text/javascript"></script>
+	<script src="assets/vendors/chart.js/dist/Chart.bundle.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/charts/chart.init.js" type="text/javascript"></script>
+	<script src="assets/vendors/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/vendors/jquery-idletimer/idle-timer.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+	<script src="assets/vendors/js/framework/components/plugins/base/sweetalert2.init.js" type="text/javascript"></script>
+
+	<!--end:: Global Optional Vendors -->
+
+	<!--begin::Global Theme Bundle -->
+	<script src="assets/base/scripts.bundle.js" type="text/javascript"></script>
+
+	<!--end::Global Theme Bundle -->
+
+	<!--begin::Page Vendors -->
+	<script src="assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+
+	<!--end::Page Vendors -->
+
+	<!--begin::Page Scripts -->
+	<script src="assets/app/js/dashboard.js" type="text/javascript"></script>
+
+	<!--end::Page Scripts -->
+
+	<!-- begin::Page Loader -->
+	<script>
+		$(window).on('load', function() {
+			$('body').removeClass('m-page--loading');
+
+			$('.counter').counterUp({
+				delay: 10,
+				time: 2000
+			});
+
+			$("#time-picker").timepicker( {
+						minuteStep: 1, showSeconds: !0, showMeridian: !1, snapToStep: !0
+					}
+			);
+
+		});
+
+
+	</script>
+
+	<!-- end::Page Loader -->
+</body>
+
+<!-- end::Body -->
+</html>
