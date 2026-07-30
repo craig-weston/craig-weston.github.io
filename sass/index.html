@@ -455,10 +455,322 @@ border-top:5px solid var(--gold);
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
+
+/* =========================
+   STICKY IM'S RESERVATION FORM
+   ========================= */
+
+
+.reservation-box{
+
+    max-width:700px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    border:4px solid var(--gold);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.12);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Thai decorative corner */
+
+.reservation-box::before{
+
+    content:"🌺";
+
+    position:absolute;
+
+    top:15px;
+
+    right:25px;
+
+    font-size:40px;
+
+}
+
+
+
+.reservation-box h3{
+
+    text-align:center;
+
+    color:var(--red);
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.reservation-box p{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Form layout */
+
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+label{
+
+    font-weight:600;
+
+    color:var(--brown);
+
+    margin-top:10px;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:15px;
+
+    border:2px solid #ead7a3;
+
+    background:#fffaf0;
+
+    font-family:'Prompt',sans-serif;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+
+    outline:none;
+
+    border-color:var(--gold);
+
+    background:white;
+
+    box-shadow:
+
+    0 0 0 4px rgba(244,197,66,.2);
+
+}
+
+
+
+
+textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+
+
+/* Menu dropdown */
+
+
+select{
+
+    cursor:pointer;
+
+}
+
+
+
+/* Button */
+
+
+.pay-button{
+
+
+    margin-top:25px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--red),
+    #e53935
+    );
+
+
+    color:white;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    font-size:1.1rem;
+
+    font-weight:bold;
+
+    font-family:'Prompt',sans-serif;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.pay-button:hover{
+
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 10px 25px rgba(183,28,28,.35);
+
+}
+
+
+/* FORM MESSAGES */
+
+.form-message{
+
+    display:none;
+
+    padding:15px 20px;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+
+
+.form-message.success{
+
+    display:block;
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+    border:2px solid #81C784;
+
+}
+
+
+
+.form-message.error{
+
+    display:block;
+
+    background:#FFEBEE;
+
+    color:#B71C1C;
+
+    border:2px solid #EF9A9A;
+
+}
+
+
+/* Small batch message */
+
+.reservation-box::after{
+
+
+    content:"ทำสดใหม่ทุกสุดสัปดาห์ • Fresh Every Weekend";
+
+
+    display:block;
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:var(--green);
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:700px){
+
+
+.reservation-box{
+
+    padding:25px;
+
+    border-radius:25px;
+
+}
+
+
+.reservation-box h3{
+
+    font-size:1.5rem;
+
+}
+
+
+}
 </style>
 
-</head>
 
+
+</head>
 
 <body>
 
@@ -1057,173 +1369,106 @@ Limited weekend batches
 
 <section id="reserve">
 
-
 <h2 class="title">
-
 จองล่วงหน้า
-
 </h2>
 
-
 <p class="subtitle">
-
 Reserve Your Weekend Order
-
 </p>
-
 
 
 <div class="reservation-box">
 
-
 <h3>
-
 🇹🇭 Reserve Your Sticky Im's Order
-
 </h3>
 
-
 <p>
-
-Our food is prepared in small batches, so reservations help us make sure your order is ready.
-
+Our food is made in small batches, so please send your order request and we will confirm availability.
 </p>
 
 
-<br>
-
-
-<form>
+<form id="orderForm" action="mailto:craig.weston1@gmail.com" method="post" enctype="text/plain">
 
 
 <label>
-
 ชื่อ • Name
-
 </label>
-
 
 <input 
-type="text"
+type="text" 
+name="Name"
 placeholder="Your name"
->
-
+required>
 
 
 <label>
-
 อีเมล • Email
-
 </label>
 
-
-<input
-type="email"
+<input 
+type="email" 
+name="Email"
 placeholder="Your email"
->
-
+required>
 
 
 <label>
-
 เลือกเมนู • Select Menu
-
 </label>
 
-
-<select>
+<select name="Order">
 
 <option>
-
 🥭 Mango Sticky Rice - £8
-
 </option>
 
-
 <option>
-
 🌶 Thai Hot Wings + Sticky Rice - £10
-
 </option>
 
-
 <option>
-
 🍚 Sticky Im's Combo - £16
-
 </option>
-
 
 </select>
 
 
+<label>
+จำนวน • Quantity
+</label>
+
+<input 
+type="number"
+name="Quantity"
+value="1"
+min="1">
 
 
 <label>
-
-วันที่รับอาหาร • Collection Date
-
+ข้อความเพิ่มเติม • Message
 </label>
 
+<textarea
+name="Message"
+placeholder="Collection date, allergies, special requests..."
+rows="5">
+</textarea>
 
-<input
-type="date"
->
-
-
-
-
-<label>
-
-เวลารับอาหาร • Collection Time
-
-</label>
+<div id="formMessage" class="form-message"></div>
 
 
-<select>
+<button class="pay-button" type="submit">
 
-<option>
-Saturday 12:00 - 14:00
-</option>
-
-
-<option>
-Saturday 14:00 - 16:00
-</option>
-
-
-<option>
-Sunday 12:00 - 14:00
-</option>
-
-
-<option>
-Sunday 14:00 - 16:00
-</option>
-
-
-</select>
-
-
-
-<br><br>
-
-
-
-<button class="pay-button">
-
-Reserve & Pay
+Send Order Request
 
 </button>
 
 
 </form>
 
-
-
 </div>
-
-
 
 </section>
 
@@ -1392,80 +1637,84 @@ hello@stickyims.com
 
 
 
+<script>
 
-<!-- FOOTER -->
+const orderForm = document.getElementById("orderForm");
 
-
-<footer>
-
-
-<h2>
-
-🥭 Sticky Im's
-
-</h2>
+const formMessage = document.getElementById("formMessage");
 
 
+orderForm.addEventListener("submit", function(event){
 
-<p>
 
-สูตรจากครอบครัว
+const name = orderForm.Name.value.trim();
 
-<br>
+const email = orderForm.Email.value.trim();
 
-Family Recipe
-
-</p>
+const quantity = orderForm.Quantity.value;
 
 
 
-<br>
+formMessage.className="form-message";
 
 
 
-<p>
+if(
+name === "" ||
+email === "" ||
+quantity === ""
+){
 
-Made with authentic Thai ingredients
-
-</p>
-
-
-
-<br>
+event.preventDefault();
 
 
+formMessage.textContent =
+"กรุณากรอกข้อมูลให้ครบถ้วน • Please complete all fields";
 
-<p>
 
-ทำด้วยความรัก ❤️
+formMessage.classList.add("error");
 
-<br>
 
-Made with Love
+return;
 
-</p>
+}
 
 
 
-<br>
+
+if(!email.includes("@")){
+
+
+event.preventDefault();
+
+
+formMessage.textContent =
+"กรุณาใส่อีเมลที่ถูกต้อง • Please enter a valid email";
+
+
+formMessage.classList.add("error");
+
+
+return;
+
+}
 
 
 
-<p>
 
-ขอบคุณค่ะ
 
-<br>
+formMessage.textContent =
+"ขอบคุณค่ะ ❤️ Your order request is ready. Opening your email...";
 
-Thank you for supporting my small business
 
-</p>
+formMessage.classList.add("success");
 
 
 
-</footer>
+});
 
 
+</script>
 
 </body>
 
