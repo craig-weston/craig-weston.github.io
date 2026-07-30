@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sticky Im's | Authentic Thai Street Food</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --red:#B71C1C;
+    --gold:#F4C542;
+    --cream:#FFF8ED;
+    --green:#2E7D32;
+    --teal:#00897B;
+    --brown:#4E342E;
+    --pink:#F06292;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Prompt',sans-serif;
+
+    background:
+    radial-gradient(circle at top right,#FFE5A8,transparent 35%),
+    radial-gradient(circle at bottom left,#FFD7E5,transparent 35%),
+    var(--cream);
+
+    color:var(--brown);
+
+    line-height:1.7;
+
+}
+
+
+h1,h2,h3{
+
+    font-family:'Mali',cursive;
+
+}
+
+
+nav{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    z-index:100;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+.logo{
+
+    color:var(--red);
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+}
+
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--brown);
+
+    font-weight:600;
+
+}
+
+
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px;
+
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.45)
+    ),
+
+    url("YOUR-MANGO-STICKY-RICE-PHOTO.jpg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+    border-bottom-left-radius:120px;
+
+    border-bottom-right-radius:120px;
+
+}
+
+
+.hero h1{
+
+    font-size:5rem;
+
+    margin:20px;
+
+}
+
+
+.hero h2{
+
+    color:var(--gold);
+
+    font-size:2rem;
+
+}
+
+
+.hero p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.button{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    background:var(--gold);
+
+    color:#222;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+.pattern{
+
+height:18px;
+
+background:
+
+repeating-linear-gradient(
+
+45deg,
+
+var(--red),
+
+var(--red) 15px,
+
+var(--gold) 15px,
+
+var(--gold) 30px
+
+);
+
+}
+
+
+
+section{
+
+    padding:90px 10%;
+
+}
+
+
+
+.title{
+
+    text-align:center;
+
+    color:var(--red);
+
+    font-size:3rem;
+
+}
+
+
+.subtitle{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.about{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+.about img{
+
+    width:100%;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+
+.thai{
+
+    color:var(--teal);
+
+    font-size:1.2rem;
+
+}
+
+
+
+@media(max-width:800px){
+
+nav{
+
+    flex-direction:column;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+}
+
+.about{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:40px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+border:3px solid var(--gold);
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.price{
+
+font-size:2rem;
+
+font-weight:bold;
+
+color:var(--red);
+
+margin:20px 0;
+
+}
+
+
+
+.badge{
+
+display:inline-block;
+
+background:var(--green);
+
+color:white;
+
+padding:10px 20px;
+
+border-radius:40px;
+
+}
+
+
+
+.story-banner{
+
+background:
+
+linear-gradient(
+135deg,
+#B71C1C,
+#F06292
+);
+
+color:white;
+
+text-align:center;
+
+padding:70px 30px;
+
+border-radius:40px;
+
+}
+
+
+
+.story-banner h2{
+
+color:var(--gold);
+
+font-size:2.5rem;
+
+}
+
+
+
+.batch-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:30px;
+
+text-align:center;
+
+}
+
+
+
+.batch-grid div{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+border-top:5px solid var(--gold);
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+
+🥭 Sticky Im's
+
+</div>
+
+
+<ul>
+
+<li><a href="#about">เรื่องราว</a></li>
+
+<li><a href="#menu">เมนู</a></li>
+
+<li><a href="#reserve">จอง</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<header class="hero">
+
+<div>
+
+<h2>
+สวัสดี • Sawasdee
+</h2>
+
+
+<h1>
+Sticky Im's
+</h1>
+
+
+<p>
+
+Authentic Thai Street Food made by
+<strong>Immily from Kalasin, Thailand (กาฬสินธุ์)</strong>.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Using authentic Thai ingredients and my family's recipes passed down through generations.
+
+</p>
+
+
+<p>
+
+🇹🇭 จากครัวของครอบครัวเรา...สู่โต๊ะอาหารของคุณ
+
+<br>
+
+From my family's kitchen to yours.
+
+</p>
+
+
+<a href="#menu" class="button">
+
+Reserve This Weekend
+
+</a>
+
+
+</div>
+
+</header>
+
+
+
+<div class="pattern"></div>
+
+
+
+<section id="about">
+
+
+<h2 class="title">
+
+ยินดีต้อนรับ
+
+</h2>
+
+
+<p class="subtitle">
+
+Welcome to Sticky Im's
+
+</p>
+
+
+
+<div class="about">
+
+
+<div>
+
+
+<h3>
+
+🇹🇭 From Kalasin to Your Table
+
+</h3>
+
+
+<br>
+
+
+<p>
+
+My name is <strong>Immily</strong> and I'm originally from
+
+<strong>Kalasin (กาฬสินธุ์)</strong> in northeastern Thailand.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Growing up, food was always at the centre of family life.
+
+The recipes I cook today have been lovingly passed down through generations.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Every dish at Sticky Im's is made using
+
+<strong>authentic Thai ingredients</strong>
+
+and traditional family recipes.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+I only prepare small batches every weekend, so every serving is freshly made with care.
+
+</p>
+
+
+<br>
+
+
+<h3>
+
+ทำด้วยความรัก ❤️
+
+</h3>
+
+
+<p>
+
+Made with Love
+
+</p>
+
+
+</div>
+
+
+<img src="YOUR-MANGO-STICKY-RICE-PHOTO.jpg">
+
+
+</div>
+
+
+</section>
+
+<div class="pattern"></div>
+
+
+<section id="menu">
+
+
+<h2 class="title">
+
+เมนูประจำสัปดาห์
+
+</h2>
+
+
+<p class="subtitle">
+
+Weekend Menu • Freshly Made in Small Batches
+
+</p>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+
+<img src="YOUR-MANGO-STICKY-RICE-PHOTO.jpg">
+
+
+<h3>
+
+🥭 ข้าวเหนียวมะม่วง
+
+</h3>
+
+
+<h4>
+
+Mango Sticky Rice
+
+</h4>
+
+
+<p class="thai">
+
+ของหวานไทยแท้
+
+<br>
+
+Authentic Thai Dessert
+
+</p>
+
+
+<p>
+
+Made with fragrant Thai sticky rice, sweet coconut cream, fresh ripe mango and toasted mung beans.
+
+</p>
+
+
+<p>
+
+Prepared using my family's recipe from Kalasin, Thailand.
+
+</p>
+
+
+<div class="price">
+
+£8
+
+</div>
+
+
+<div class="badge">
+
+สูตรครอบครัว
+
+<br>
+
+Family Recipe
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<img src="YOUR-THAI-WINGS-PHOTO.jpg">
+
+
+<h3>
+
+🌶 ปีกไก่ทอดรสจัด
+
+</h3>
+
+
+<h4>
+
+Thai Hot & Spicy Wings
+
+</h4>
+
+
+<p class="thai">
+
+อาหารรสจัดแบบไทย
+
+<br>
+
+Authentic Thai Spice
+
+</p>
+
+
+<p>
+
+Crispy chicken wings marinated overnight with Thai herbs, garlic, chilli and spices.
+
+</p>
+
+
+<p>
+
+Served with fragrant Thai sticky rice.
+
+</p>
+
+
+<div class="price">
+
+£10
+
+</div>
+
+
+<div class="badge">
+
+เผ็ด • Spicy
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<img src="YOUR-COMBO-PHOTO.jpg">
+
+
+<h3>
+
+🍚 ชุด Sticky Im's
+
+</h3>
+
+
+<h4>
+
+Sticky Im's Combo
+
+</h4>
+
+
+<p class="thai">
+
+ชุดสุดคุ้ม
+
+<br>
+
+Perfect Thai Feast
+
+</p>
+
+
+<p>
+
+Mango Sticky Rice + Thai Hot Wings + Sticky Rice.
+
+</p>
+
+
+<p>
+
+A taste of Thailand in one meal.
+
+</p>
+
+
+<div class="price">
+
+£16
+
+</div>
+
+
+<div class="badge">
+
+ขายดี
+
+<br>
+
+Best Seller
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+
+<div class="story-banner">
+
+
+<h2>
+
+🇹🇭 From Kalasin to Your Table
+
+</h2>
+
+
+<br>
+
+
+<p>
+
+กาฬสินธุ์ ประเทศไทย
+
+<br>
+
+Kalasin, Thailand
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Using authentic Thai ingredients
+
+</p>
+
+
+<br>
+
+
+<p>
+
+สูตรจากครอบครัว
+
+<br>
+
+Family Recipes
+
+</p>
+
+
+<br>
+
+
+<p>
+
+ทำสดใหม่ทุกสุดสัปดาห์
+
+<br>
+
+Freshly Made Every Weekend
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+
+<h2 class="title">
+
+ทำสดใหม่ทุกสุดสัปดาห์
+
+</h2>
+
+
+<p class="subtitle">
+
+Fresh Every Weekend
+
+</p>
+
+
+
+<div class="batch-grid">
+
+
+<div>
+
+<h3>
+
+📅 Thursday
+
+</h3>
+
+
+<p>
+
+New menu released
+
+<br>
+
+เปิดเมนูใหม่
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+🍚 Saturday
+
+</h3>
+
+
+<p>
+
+Fresh collection day
+
+<br>
+
+วันรับอาหาร
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+🥭 Sunday
+
+</h3>
+
+
+<p>
+
+Limited weekend batches
+
+<br>
+
+จำนวนจำกัด
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
