@@ -1,236 +1,40 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craig Weston | Digital Product Design Leader</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #07070c;
-      --text: #f7f7fb;
-      --muted: #b9bac7;
-      --soft: rgba(255,255,255,.075);
-      --line: rgba(255,255,255,.12);
-      --accent: #8be9ff;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20%;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(124,58,237,.52), transparent 26%),
-        radial-gradient(circle at 84% 12%, rgba(34,211,238,.42), transparent 30%),
-        radial-gradient(circle at 48% 88%, rgba(249,115,22,.38), transparent 34%),
-        radial-gradient(circle at 66% 45%, rgba(255,255,255,.08), transparent 30%);
-      animation: floatGlow 16s ease-in-out infinite alternate;
-      z-index: -2;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      backdrop-filter: blur(95px);
-      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.2));
-      z-index: -1;
-    }
-    @keyframes floatGlow { from { transform: scale(1) rotate(0deg); } to { transform: scale(1.12) rotate(4deg); } }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 50;
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(7,7,12,.56);
-      backdrop-filter: blur(26px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .logo { font-weight: 850; letter-spacing: 1.5px; font-size: 14px; }
-    nav a { color: #fff; text-decoration: none; margin-left: 26px; opacity: .72; font-size: 14px; transition: .25s ease; }
-    nav a:hover { opacity: 1; }
-    header { min-height: 100vh; display: flex; align-items: center; padding: 145px 7% 90px; }
-    .hero { max-width: 1120px; }
-    .eyebrow {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      padding: 10px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      color: #ddddea;
-      margin-bottom: 28px;
-      font-size: 14px;
-      backdrop-filter: blur(20px);
-    }
-    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px var(--accent); }
-    h1 { font-size: clamp(55px, 9vw, 126px); line-height: .87; letter-spacing: -7px; margin-bottom: 34px; max-width: 1100px; }
-    .gradient { background: linear-gradient(120deg,#c4b5fd,#67e8f9,#fdba74); -webkit-background-clip: text; color: transparent; }
-    .intro { max-width: 820px; font-size: clamp(18px, 2vw, 23px); color: #dadbe4; margin-bottom: 42px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 16px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 24px; border-radius: 15px; text-decoration: none; font-weight: 750; transition: .3s ease; }
-    .primary { background: #fff; color: #09090f; }
-    .secondary { color: #fff; border: 1px solid var(--line); background: rgba(255,255,255,.06); }
-    .btn:hover { transform: translateY(-4px); }
-    section { padding: 100px 7%; }
-    .section-title { font-size: clamp(38px, 5vw, 68px); line-height: .98; letter-spacing: -3px; margin-bottom: 22px; }
-    .section-intro { max-width: 820px; color: #cfd0dc; font-size: 20px; margin-bottom: 44px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 22px; }
-    .card, .case, .panel {
-      background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.04));
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      backdrop-filter: blur(30px);
-      box-shadow: 0 20px 80px rgba(0,0,0,.18);
-    }
-    .card { padding: 32px; min-height: 230px; transition: .35s ease; }
-    .card:hover, .case:hover { transform: translateY(-8px); background: rgba(255,255,255,.095); }
-    .num, .case small { color: var(--accent); font-weight: 800; letter-spacing: .5px; text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 18px; }
-    .card h3, .case h3 { font-size: 24px; line-height: 1.15; margin-bottom: 14px; letter-spacing: -.6px; }
-    .card p, .case p, .panel p { color: #d3d4df; }
-    .feature { display: grid; grid-template-columns: 1.12fr .88fr; gap: 24px; align-items: stretch; }
-    .panel { padding: 42px; }
-    .panel h3 { font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -2px; margin-bottom: 20px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .skill { padding: 10px 15px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1); color: #eeeef4; font-size: 14px; }
-    .case { padding: 32px; transition: .35s ease; }
-    .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .timeline { display: grid; gap: 18px; max-width: 980px; }
-    .timeline-item { padding: 26px; border-left: 2px solid rgba(139,233,255,.7); background: rgba(255,255,255,.055); border-radius: 0 22px 22px 0; }
-    .timeline-item strong { display: block; font-size: 20px; margin-bottom: 8px; }
-    .timeline-item p { color: #d0d1dc; }
-    .cta { text-align: center; padding-bottom: 130px; }
-    .cta .section-title { max-width: 950px; margin-left: auto; margin-right: auto; }
-    .cta p { max-width: 720px; margin: 0 auto 34px; color: #d0d1dc; font-size: 20px; }
-    footer { text-align: center; padding: 46px 7%; border-top: 1px solid rgba(255,255,255,.08); color: #9899a6; }
-    @media (max-width: 960px) { .feature, .experience-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 760px) {
-      nav { display: none; }
-      header, section { padding-left: 24px; padding-right: 24px; }
-      h1 { letter-spacing: -3px; }
-      .actions { flex-direction: column; align-items: flex-start; }
-      .btn { width: 100%; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#151e1c">
+<link rel="canonical" href="https://craigweston.co.uk/">
+<title>Craig Weston has moved | New portfolio</title>
+<meta name="description" content="Craig Weston's portfolio and books have moved to https://craigweston.co.uk/.">
+<script>(function () {
+  var hash = window.location.hash.toLowerCase();
+  var path = window.location.pathname.toLowerCase();
+  var paths = {
+    "#work": ["/matchpoint.html", ""],
+    "#systems": ["/design.html", ""],
+    "#experience": ["/about.html", ""],
+    "#contact": ["/about.html", "#contact"],
+    "/work": ["/matchpoint.html", ""],
+    "/systems": ["/design.html", ""],
+    "/experience": ["/about.html", ""],
+    "/contact": ["/about.html", "#contact"],
+    "/design": ["/design.html", ""],
+    "/books": ["/books.html", ""]
+  };
+  var destination = paths[hash] || paths[path] || ["/", window.location.hash];
+  var url = "https://craigweston.co.uk" + destination[0] + window.location.search + destination[1];
+  window.location.replace(url);
+}());</script>
+<meta http-equiv="refresh" content="0; url=https://craigweston.co.uk/">
+<style>:root{color-scheme:dark}*{box-sizing:border-box}html{min-height:100%;background:#151e1c}body{min-height:100vh;min-height:100dvh;margin:0;display:grid;place-items:center;padding:clamp(1.5rem,6vw,5rem);font:400 1rem/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f3f2e8;background:radial-gradient(ellipse at 85% 20%,#30483c 0%,transparent 60%),#151e1c}.panel{max-width:38rem;width:100%;padding:clamp(1.5rem,5vw,3.25rem);border:1px solid #5b7164;border-radius:1.2rem;background:#1b2723;box-shadow:0 18px 55px #0005}.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#c7d5c7}h1{font-size:clamp(2rem,5.3vw,3.2rem);line-height:1.14;letter-spacing:-.035em;margin:1rem 0;color:#fff}p{max-width:31rem;color:#e0e7df}a{color:#172a1f;background:#e4ebd9;border-radius:.6rem;padding:.8rem 1.15rem;display:inline-block;font-weight:700;text-decoration:none;margin-top:.8rem}a:hover,a:focus-visible{background:#fff;outline:3px solid #b6d6b3;outline-offset:4px}.small{font-size:.87rem;color:#b7c7bc;margin-top:2rem}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}</style>
 </head>
-<body>
-  <nav>
-    <div class="logo">CRAIG WESTON</div>
-    <div>
-      <a href="#work">Work</a>
-      <a href="#systems">Systems</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <header>
-    <div class="hero">
-      <div class="eyebrow"><span class="dot"></span> Digital Product Design Leader · UX · Design Systems · Technology</div>
-      <h1>Problem Solver</h1>
-      <p class="intro">
-        I'm <strong>Craig Weston</strong>, a senior product designer with expertise across UX, software development, product strategy, design systems and technical architecture. Having worked across start-ups and large organisations such as BP and Google, I help organisations turn complex ideas into elegant, scalable digital products that users understand and engineering teams can build with confidence.
-      </p>
-      <div class="actions">
-       <a href="mailto:craig.weston1@gmail.com" class="btn primary">Email Me</a>
-<a href="craig-CV.pdf" class="btn secondary" target="_blank">Download CV</a>
-      </div>
-    </div>
-  </header>
-
-  <section id="work">
-    <h2 class="section-title">What I do</h2>
-    <p class="section-intro">I work across product strategy, UX, visual design and technical delivery, bridging the gap between design ambition and engineering reality.</p>
-    <div class="grid">
-      <div class="card"><span class="num">01</span><h3>UX & Product Design</h3><p>User research, journeys, wireframes, prototypes, usability testing and product experiences designed around real customer needs.</p></div>
-      <div class="card"><span class="num">02</span><h3>Design Systems</h3><p>Scalable systems, design tokens, documentation, governance and reusable foundations for consistent digital products.</p></div>
-      <div class="card"><span class="num">03</span><h3>Component Libraries</h3><p>Reusable UI components that translate from Figma into production-ready interfaces for development teams.</p></div>
-      <div class="card"><span class="num">04</span><h3>Technical Leadership</h3><p>Strong understanding of software architecture, APIs, cloud platforms, front-end delivery and agile workflows.</p></div>
-    </div>
-  </section>
-
-  <section id="systems">
-    <div class="feature">
-      <div class="panel">
-        <h3>Design systems that scale beyond the screen.</h3>
-        <p>I create practical design systems that connect brand, UX, accessibility and engineering. The focus is on systems developers can actually build from: clear component rules, reusable patterns, design tokens, governance and documentation that speed up delivery.</p>
-        <div class="skills">
-          <div class="skill">Figma</div><div class="skill">Design Tokens</div><div class="skill">Component Libraries</div><div class="skill">Accessibility</div><div class="skill">Developer Handoff</div><div class="skill">Design QA</div><div class="skill">HTML & CSS</div><div class="skill">Product Strategy</div>
-        </div>
-      </div>
-      <div class="panel">
-        <h3>Design × Development</h3>
-        <p>My technical background means I can collaborate closely with engineers, understand constraints early and design solutions that are realistic, scalable and maintainable.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="focus">
-    <h2 class="section-title">Selected focus areas</h2>
-    <p class="section-intro">My experience sits at the intersection of digital product design, technical delivery and business transformation.</p>
-    <div class="grid">
-      <div class="case"><small>UX · Product Strategy · Platform Design</small><h3>Digital Product Platforms</h3><p>Designing product experiences, portals and digital platforms that simplify complex operational workflows.</p></div>
-      <div class="case"><small>EV · Fleet · Charging Infrastructure</small><h3>Energy & EV Charging</h3><p>Experience shaping products in the energy, EV charging and fleet technology sectors.</p></div>
-      <div class="case"><small>Systems · Components · Governance</small><h3>Design Systems for Teams</h3><p>Creating reusable design foundations that improve consistency, speed up delivery and support scalable development.</p></div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2 class="section-title">Selected experience</h2>
-    <p class="section-intro">I have worked across enterprise energy, EV charging infrastructure and digital platforms, combining UX, product strategy, design systems and technical leadership.</p>
-    <div class="experience-grid">
-      <div class="case">
-        <small>BP</small>
-        <h3>Enterprise Digital Product & UX</h3>
-        <p>Worked on customer-focused digital experiences within a global energy environment, collaborating with stakeholders, product teams and engineering to improve services through research, UX and product thinking.</p>
-        <div class="skills"><div class="skill">Enterprise UX</div><div class="skill">Stakeholder Workshops</div><div class="skill">Customer Research</div><div class="skill">Product Design</div></div>
-      </div>
-      <div class="case">
-        <small>Voltempo</small>
-        <h3>Head of Digital & Technology</h3>
-        <p>Built and led the digital capability from the ground up. Defined product and technology strategy, established UX practices, created scalable design foundations and led delivery of the Fleet Portal and charging platform for HGV charging infrastructure.</p>
-        <div class="skills"><div class="skill">Leadership</div><div class="skill">Product Strategy</div><div class="skill">Design Systems</div><div class="skill">Cloud Architecture</div><div class="skill">UX Research</div><div class="skill">Technical Strategy</div></div>
-      </div>
-      <div class="case">
-        <small>EVIQ</small>
-        <h3>EV Charging Platform Design</h3>
-        <p>Contributed to digital product thinking within the EV charging ecosystem, focusing on intuitive user journeys, scalable interfaces and close technical collaboration to simplify complex charging experiences.</p>
-        <div class="skills"><div class="skill">EV Charging</div><div class="skill">Platform Design</div><div class="skill">Design Systems</div><div class="skill">Product Strategy</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="approach">
-    <h2 class="section-title">How I work</h2>
-    <p class="section-intro">I bring structure to complex problems, turning ambiguity into clear product direction and buildable design systems.</p>
-    <div class="timeline">
-      <div class="timeline-item"><strong>Discover the problem</strong><p>Clarify user needs, business goals, constraints and technical context through research, interviews and workshops.</p></div>
-      <div class="timeline-item"><strong>Shape the experience</strong><p>Map journeys, prototype ideas and validate flows before committing teams to expensive development work.</p></div>
-      <div class="timeline-item"><strong>Systemise the solution</strong><p>Create reusable components, design rules and documentation that allow teams to deliver consistently at scale.</p></div>
-      <div class="timeline-item"><strong>Partner with engineering</strong><p>Work closely with development teams through handoff, build reviews, design QA and ongoing product iteration.</p></div>
-    </div>
-  </section>
-
-  <section class="cta" id="contact">
-    <h2 class="section-title">Let’s build something useful, elegant and scalable.</h2>
-    <p>Whether you're creating a new product, improving an existing platform or building a design system, I can help connect strategy, UX, visual design and technology.</p>
-    <a href="mailto:craig.weston1@gmail.com" class="btn primary">craig.weston1@gmail.com</a>
-  </section>
-
-  <footer>© 2026 Craig Weston · Digital Product Design Leader · UX · Design Systems · Technology</footer>
-</body>
-</html>
+<body><main class="panel">
+<div class="eyebrow">Craig Weston &middot; New website</div>
+<h1>I've moved house. Digitally.</h1>
+<p>The old portfolio has retired, filed its paperwork, and disappeared into the sunset. My new design work, research and books have a proper home.</p>
+<p><a href="https://craigweston.co.uk/">Visit craigweston.co.uk</a></p>
+<p class="small">You should be redirected automatically. If not, the link above will take you there.</p>
+</main></body></html>
